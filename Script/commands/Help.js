@@ -6,7 +6,7 @@ module.exports.config = {
     name: "help",
     version: "2.0.0",
     hasPermssion: 0,
-    credits: "SHAHADAT SAHU",
+    credits: "𝘾𝙤𝙘𝙖 𝘼𝙧𝙖𝙫",
     description: "Shows all commands with details",
     commandCategory: "system",
     usages: "[command name/page number]",
@@ -43,10 +43,10 @@ module.exports.languages = {
 
 // 🔹 এখানে আপনার ফটো Imgur লিংক করে বসাবেন ✅
 const helpImages = [
-    "https://i.imgur.com/MXAci64.jpeg",
+    "https://i.imgur.com/3bcVcf5.jpeg",
     "https://i.imgur.com/mXcJIVz.jpeg",
-    "https://i.imgur.com/kxmiXvA.jpeg",
-    ""
+    "https://i.imgur.com/MXAci64.jpeg",
+    "https://i.imgur.com/kxmiXvA.jpeg"
 ];
 
 
@@ -55,7 +55,7 @@ function downloadImages(callback) {
     const filePath = path.join(__dirname, "cache", "help_random.jpg");
 
     request(randomUrl)
-        .pipe(fsjateWriteStream(filePath))
+        .pipe(fs.createWriteStream(filePath))
         .on("close", () => callback([filePath]));
 }
 
@@ -80,7 +80,7 @@ module.exports.handleEvent = function ({ api, event, getText }) {
         command.config.commandCategory || "Unknown",  
         command.config.cooldowns || 0,  
         prefix,  
-        global.config.BOTNAME || "𝐒𝐡𝐚𝐡𝐚𝐝𝐚𝐭 𝐂𝐡𝐚𝐭 𝐁𝐨𝐭"  
+        global.config.BOTNAME || "𝐀𝐫𝐚𝐯 𝐂𝐡𝐚𝐭 𝐁𝐨𝐭"  
     );  
 
     downloadImages(files => {  
@@ -110,7 +110,7 @@ module.exports.run = function ({ api, event, args, getText }) {
             command.config.commandCategory || "Unknown",  
             command.config.cooldowns || 0,  
             prefix,  
-            global.config.BOTNAME || "𝐒𝐡𝐚𝐡𝐚𝐝𝐚𝐭 𝐂𝐡𝐚𝐭 𝐁𝐨𝐭"  
+            global.config.BOTNAME || "𝐀𝐫𝐚𝐯 𝐂𝐡𝐚𝐭 𝐁𝐨𝐭"  
         );  
 
         downloadImages(files => {  
@@ -143,7 +143,7 @@ module.exports.run = function ({ api, event, args, getText }) {
 ${msg}
 ┣━━━━━━━━━━━━━━━━┫
 ┃ ⚙ Prefix: ${prefix}
-┃ 🤖 Bot Name: ${global.config.BOTNAME || "𝐒𝐡𝐚𝐡𝐚𝐝𝐚𝐭 𝐂𝐡𝐚𝐭 𝐁𝐨𝐭"}
+┃ 🤖 Bot Name: ${global.config.BOTNAME || "𝐀𝐫𝐚𝐯 𝐂𝐡𝐚𝐭 𝐁𝐨𝐭"}
 ┃ 👑 Owner: 𝘾𝙤𝙘𝙖 𝘼𝙧𝙖𝙫
 ╰━━━━━━━━━━━━━━━━╯`;
 
