@@ -32,7 +32,7 @@ module.exports.languages = {
 ┣━━━━━━━━━━━━━━━━┫
 ┃ ⚙ Prefix: %8
 ┃ 🤖 Bot Name: %9
-┃ 👑 Owner: 𝐒𝐇𝐀𝐇𝐀𝐃𝐀𝐓 𝐒𝐀𝐇𝐔
+┃ 👑 Owner: 𝘾𝙤𝙘𝙖 𝘼𝙧𝙖𝙫
 ╰━━━━━━━━━━━━━━━━╯`,
         "helpList": "[ There are %1 commands. Use: \"%2help commandName\" to view more. ]",
         "user": "User",
@@ -43,10 +43,10 @@ module.exports.languages = {
 
 // 🔹 এখানে আপনার ফটো Imgur লিংক করে বসাবেন ✅
 const helpImages = [
-    "https://i.imgur.com/sxSn1K3.jpeg",
-    "https://i.imgur.com/8WvpgUL.jpeg",
-    "https://i.imgur.com/8WvpgUL.jpeg",
-    "https://i.imgur.com/sxSn1K3.jpeg"
+    "https://i.imgur.com/MXAci64.jpeg",
+    "https://i.imgur.com/mXcJIVz.jpeg",
+    "https://i.imgur.com/kxmiXvA.jpeg",
+    ""
 ];
 
 
@@ -55,7 +55,7 @@ function downloadImages(callback) {
     const filePath = path.join(__dirname, "cache", "help_random.jpg");
 
     request(randomUrl)
-        .pipe(fs.createWriteStream(filePath))
+        .pipe(fsjateWriteStream(filePath))
         .on("close", () => callback([filePath]));
 }
 
@@ -144,7 +144,7 @@ ${msg}
 ┣━━━━━━━━━━━━━━━━┫
 ┃ ⚙ Prefix: ${prefix}
 ┃ 🤖 Bot Name: ${global.config.BOTNAME || "𝐒𝐡𝐚𝐡𝐚𝐝𝐚𝐭 𝐂𝐡𝐚𝐭 𝐁𝐨𝐭"}
-┃ 👑 Owner: 𝐒𝐇𝐀𝐇𝐀𝐃𝐀𝐓 𝐒𝐀𝐇𝐔
+┃ 👑 Owner: 𝘾𝙤𝙘𝙖 𝘼𝙧𝙖𝙫
 ╰━━━━━━━━━━━━━━━━╯`;
 
     downloadImages(files => {  
